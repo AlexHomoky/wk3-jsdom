@@ -1,0 +1,32 @@
+
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+#div1 {
+    display:block;
+    border-width: 10px;
+    border-color: black;
+
+}
+
+#resultsDiv {
+    background-color: aquamarine;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#codesDiv {
+    background-color: aquamarine;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
