@@ -13,14 +13,15 @@ function diceRoll() {
 let floatingScore = 0
 
 roll.addEventListener("click", () => {
+    roll.disabled = false
     let result = diceRoll()
     won.textContent = ""
     currentRoll.textContent = `Roll = ${diceRoll()}`
-    if (result == 1) {
+    if (result === 1) {
         console.log(result)
         floatingScore = 0
         won.textContent = "Oops back to 0..."
-    } else if (result == 2 || result == 3 || result == 4 || result == 5 || result == 6 ) {
+    } else if (result >= 2 && result <= 6 ) {
         console.log(result)
         floatingScore += result
     }
@@ -31,6 +32,5 @@ roll.addEventListener("click", () => {
     }
     
 })
-
-
+// Lag in the addition to the score of one turn///
 
