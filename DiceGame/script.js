@@ -2,6 +2,7 @@ const currentRoll = document.getElementById("currentRoll")
 const score = document.getElementById("score")
 const roll = document.getElementById("roll")
 const won = document.getElementById("won")
+const restart = document.getElementById("restart")
 
 
 function diceRoll() {
@@ -16,21 +17,25 @@ roll.addEventListener("click", () => {
     roll.disabled = false
     let result = diceRoll()
     won.textContent = ""
-    currentRoll.textContent = `Roll = ${diceRoll()}`
+    currentRoll.textContent = `Current Roll = ${result}`
     if (result === 1) {
         console.log(result)
         floatingScore = 0
-        won.textContent = "Oops back to 0..."
+        won.textContent = "Rolling a 1 resets the score"
     } else if (result >= 2 && result <= 6 ) {
         console.log(result)
         floatingScore += result
     }
-    score.textContent = `Score = ${floatingScore}`
+    score.textContent = `Total Score = ${floatingScore}`
     if (floatingScore >= 20) {
-        won.textContent = "You Won!! please refresh to play again"
+        won.textContent = "You Won!!\nPress 'Restart' to play again"
         roll.disabled = true
     }
-    
 })
-// Lag in the addition to the score of one turn///
+
+restart.addEventListener("click", () => {
+    window.location.reload()
+
+})
+
 
